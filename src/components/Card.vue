@@ -1,10 +1,11 @@
 <script setup>
 defineProps({
+  id: Number,
   imageUrl: String,
   title: String,
   price: Number,
   isAdded: Boolean,
-  isFavourite: Boolean,
+  isFavorite: Boolean,
   onClickAdd: Function,
   onClickFavourite: Function
 })
@@ -16,7 +17,7 @@ defineProps({
   >
     <img
       @click="onClickFavourite"
-      :src="!isFavourite ? '/like-1.svg' : '/like-2.svg'"
+      :src="!isFavorite ? '/like-1.svg' : '/like-2.svg'"
       alt="Like 1"
       class="absolute top-8 left-8"
     />
