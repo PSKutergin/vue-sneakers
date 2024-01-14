@@ -1,4 +1,5 @@
 <script setup>
+import { getUrl } from '@/main'
 const emit = defineEmits(['onClickRemove'])
 
 defineProps({
@@ -10,7 +11,7 @@ defineProps({
 
 <template>
   <div class="flex items-center border border-slate-200 rounded-xl p-4 gap-4">
-    <img class="w-16 h-16" :src="imageUrl" :alt="title" />
+    <img class="w-16 h-16" :src="getUrl(imageUrl)" :alt="title" />
 
     <div class="flex flex-col flex-1">
       <p>{{ title }}</p>

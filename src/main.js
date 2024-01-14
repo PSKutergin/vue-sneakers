@@ -16,9 +16,13 @@ const routes = [
 ]
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHistory(import.meta.env.BASE_URL),
     routes
 })
+
+export const getUrl = (name) => {
+    return new URL(`${import.meta.env.BASE_URL}${name}`, import.meta.url)
+}
 
 app.use(autoAnimatePlugin)
 app.use(router)

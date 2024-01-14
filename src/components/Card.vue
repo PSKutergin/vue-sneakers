@@ -1,4 +1,6 @@
 <script setup>
+import { getUrl } from '@/main'
+
 defineProps({
   id: Number,
   imageUrl: String,
@@ -18,11 +20,11 @@ defineProps({
     <img
       v-show="Boolean(onClickFavourite)"
       @click="onClickFavourite"
-      :src="!isFavorite ? '/like-1.svg' : '/like-2.svg'"
+      :src="getUrl(!isFavorite ? '/like-1.svg' : '/like-2.svg')"
       alt="Like 1"
       class="absolute top-8 left-8"
     />
-    <img :src="imageUrl" alt="Sneaker" />
+    <img :src="getUrl(imageUrl)" alt="Sneaker" />
     <p class="mt-2">{{ title }}</p>
 
     <div class="flex justify-between mt-5">
@@ -34,7 +36,7 @@ defineProps({
       <img
         v-show="Boolean(onClickAdd)"
         @click="onClickAdd"
-        :src="!isAdded ? '/plus.svg' : '/checked.svg'"
+        :src="getUrl(!isAdded ? '/plus.svg' : '/checked.svg')"
         alt="Plus"
       />
     </div>
